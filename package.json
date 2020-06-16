@@ -1,13 +1,22 @@
 {
   "name": "pretty-greeter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple Pretty greeter",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"lib/**/*.js\" \"lib/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Hello", "Greeter"],
+  "author": "Laas",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -17,7 +26,16 @@
     "email": "safeetyy@gmail.com",
     "url": "https://github.com/CoderAware/pretty-greeter/issues"
   },
-  "homepage": "git@github.com:CoderAware/pretty-greeter.git"
-
+  "homepage": "git@github.com:CoderAware/pretty-greeter.git",
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
-
