@@ -8,5 +8,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CoderAware/pretty-greeter.git"
+  },
+  "bugs": {
+    "email": "safeetyy@gmail.com",
+    "url": "https://github.com/CoderAware/pretty-greeter/issues"
+  },
+  "homepage": "git@github.com:CoderAware/pretty-greeter.git"
+
 }
+
